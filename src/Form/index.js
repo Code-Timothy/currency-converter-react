@@ -9,25 +9,25 @@ import "./style.css";
 const Form = () => {
     const [amount, setAmount] = useState("");
     const [selectedCurrency, setSelectedCurrency] = useState("USD");
-    const [result, setResult] = useState(null);
+    const [result, setResult] = useState({
+        fromCurrency: "",
+        toCurrency: "",
+        value: 0,
+    });
 
     const onFormSubmit = (event) => {
         event.preventDefault();
     };
 
     const calculateResult = () => {
-        switch (selectedCurrency) {
-            case "USD":
-                return setResult(() => (amount / currencies[3].rate));
-            case "EUR":
-                return setResult(() => (amount / currencies[0].rate));
-            case "CHF":
-                return setResult(() => (amount / currencies[2].rate));
-            case "GBP":
-                return setResult(() => (amount / currencies[1].rate));
-            default:
-                return setResult(0);
-        }
+        const selectedCurrencyRate = currencies.find((currency) => currency.short === selectedCurrency).rate;
+        const convertedAmount = amount / selectedCurrencyRate;
+
+        setResult({
+            fromCurrency: "PLN",
+            toCurrency: selectedCurrency,
+            value: convertedAmount,
+        });
     };
 
     return (
@@ -57,7 +57,7 @@ const Form = () => {
                     }
                 />
 
-                <Result result={result} amount={amount} selectedCurrency={selectedCurrency} />
+                <Result result={result} amount={amount} />
 
                 <p className="form__paragraph">
                     <button onClick={() => calculateResult()} className="form__button">Przelicz</button>
