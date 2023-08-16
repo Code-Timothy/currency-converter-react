@@ -5,7 +5,7 @@ const Select = () => {
     return (
         <select className="form__input" id="currencySelect">
             {currencies.map((currency) => (
-                <option value={currency.short}>
+                <option key={currency.short} value={currency.short}>
                     {currency.name}
                 </option>
             ))}
