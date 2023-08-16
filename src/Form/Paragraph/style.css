@@ -9,11 +9,6 @@
     text-align: left;
 }
 
-.form__input {
-    width: 225px;
-    padding: 5px;
-}
-
 .form__button {
     padding: 10px 25px;
     text-transform: uppercase;

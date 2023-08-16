@@ -1,5 +1,6 @@
 import Paragraph from "./Paragraph/index";
 import Info from "./Info/index";
+import Select from "./Select/index";
 import "./style.css";
 
 const Form = () => (
@@ -9,14 +10,7 @@ const Form = () => (
 
             <Paragraph
                 labelContent="Wybierz walutę :"
-                body={
-                    <select className="form__input" id="currencySelect">
-                        <option value="USD">Dolar Amerykański</option>
-                        <option value="EUR">Euro</option>
-                        <option value="CHF">Frank Szwajcarski</option>
-                        <option value="GBP">Funt Brytyjski</option>
-                    </select>
-                }
+                body={<Select />}
             />
 
             <Paragraph
