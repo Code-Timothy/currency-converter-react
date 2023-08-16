@@ -3,6 +3,7 @@ import { currencies } from "./currencies";
 import Paragraph from "./Paragraph/index";
 import Info from "./Info/index";
 import Select from "./Select/index";
+import Result from "./Result/index";
 import "./style.css";
 
 const Form = () => {
@@ -27,14 +28,10 @@ const Form = () => {
             default:
                 return setResult(0);
         }
-
     };
 
     return (
-        <form
-            className="form"
-            onSubmit={onFormSubmit}
-        >
+        <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
 
@@ -60,15 +57,12 @@ const Form = () => {
                     }
                 />
 
-                <p className="form__paragraph">
-                    {<span>
-                        {result === null ? "" : `Za ${amount} PLN dostaniesz ${result.toFixed(2)} ${selectedCurrency}`}
-                    </span>}
-                </p>
+                <Result result={result} amount={amount} selectedCurrency={selectedCurrency} />
 
                 <p className="form__paragraph">
                     <button onClick={() => calculateResult()} className="form__button">Przelicz</button>
                 </p>
+
                 <Info info="*Kursy walut są z dnia 08.08.2023 ze strony NBP.*" />
             </fieldset>
         </form>
