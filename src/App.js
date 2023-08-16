@@ -1,4 +1,5 @@
 import Paragraph from "./Paragraph/index";
+import Info from "./Info/index";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
           body={<button className="form__button">Przelicz</button>}
         />
 
-        <p className="form__paragraph form__paragraph--info">*Kursy walut są z dnia 08.08.2023 ze strony NBP.*</p>
+        <Info info="*Kursy walut są z dnia 08.08.2023 ze strony NBP.*" />
       </fieldset>
     </form>
   )

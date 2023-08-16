@@ -3,12 +3,6 @@
     text-align: center;
 }
 
-.form__paragraph--info {
-    font-size: 12px;
-    margin-bottom: 10px;
-    color: #666;
-}
-
 .form__label {
     display: inline-block;
     width: 225px;
