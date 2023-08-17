@@ -9,10 +9,9 @@ import "./style.css";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
-    const [selectedCurrency, setSelectedCurrency] = useState("USD");
+    const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].short);
     const [result, setResult] = useState({
         amount: 0,
-        fromCurrency: "",
         toCurrency: "",
         value: 0,
     });
@@ -28,7 +27,6 @@ const Form = () => {
 
         setResult({
             amount: amount,
-            fromCurrency: "PLN",
             toCurrency: selectedCurrency,
             value: convertedAmount,
         });
