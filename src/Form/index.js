@@ -39,7 +39,12 @@ const Form = () => {
 
                 <Paragraph
                     labelContent="Wybierz walutę :"
-                    body={<Select selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency} />}
+                    body={
+                        <Select
+                            selectedCurrency={selectedCurrency}
+                            setSelectedCurrency={setSelectedCurrency}
+                        />
+                    }
                 />
 
                 <Paragraph
@@ -49,11 +54,9 @@ const Form = () => {
                             className="form__input"
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
-                            id="amount"
                             type="number"
-                            name="amount"
                             step="0.1"
-                            min="0"
+                            min="1"
                             required
                         />
                     }
@@ -65,7 +68,7 @@ const Form = () => {
                     <button onClick={() => calculateResult()} className="form__button">Przelicz</button>
                 </p>
 
-                <Info info="*Kursy walut są z dnia 08.08.2023 ze strony NBP.*" />
+                <Info info="*Kursy walut są z dnia 17.08.2023 ze strony NBP.*" />
             </fieldset>
         </form>
     )
