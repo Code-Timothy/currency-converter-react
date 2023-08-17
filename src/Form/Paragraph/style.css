@@ -8,17 +8,3 @@
     width: 225px;
     text-align: left;
 }
-
-.form__button {
-    padding: 10px 25px;
-    text-transform: uppercase;
-    color: white;
-    background-color: #4C9173;
-    border: none;
-    border-radius: 5px;
-}
-
-.form__button:hover {
-    cursor: pointer;
-    background-color: hsl(154, 31%, 47%);
-}

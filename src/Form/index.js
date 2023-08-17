@@ -4,6 +4,7 @@ import Paragraph from "./Paragraph/index";
 import Info from "./Info/index";
 import Select from "./Select/index";
 import Result from "./Result/index";
+import Button from "./Button/index";
 import "./style.css";
 
 const Form = () => {
@@ -64,9 +65,7 @@ const Form = () => {
 
                 <Result result={result} />
 
-                <p className="form__paragraph">
-                    <button onClick={() => calculateResult()} className="form__button">Przelicz</button>
-                </p>
+                <Button calculateResult={calculateResult} />
 
                 <Info info="*Kursy walut są z dnia 17.08.2023 ze strony NBP.*" />
             </fieldset>
