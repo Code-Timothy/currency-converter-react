@@ -10,6 +10,7 @@ const Form = () => {
     const [amount, setAmount] = useState("");
     const [selectedCurrency, setSelectedCurrency] = useState("USD");
     const [result, setResult] = useState({
+        amount: 0,
         fromCurrency: "",
         toCurrency: "",
         value: 0,
@@ -24,6 +25,7 @@ const Form = () => {
         const convertedAmount = amount / selectedCurrencyRate;
 
         setResult({
+            amount: amount,
             fromCurrency: "PLN",
             toCurrency: selectedCurrency,
             value: convertedAmount,
@@ -57,7 +59,7 @@ const Form = () => {
                     }
                 />
 
-                <Result result={result} amount={amount} />
+                <Result result={result} />
 
                 <p className="form__paragraph">
                     <button onClick={() => calculateResult()} className="form__button">Przelicz</button>
