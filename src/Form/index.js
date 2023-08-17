@@ -9,9 +9,9 @@ const Form = () => {
     const [amount, setAmount] = useState("");
     const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].short);
     const [result, setResult] = useState({
-        amount: 0,
-        toCurrency: "",
-        value: 0,
+        fromAmount: 0,
+        currency: "",
+        toAmount: 0,
     });
 
     const onFormSubmit = (event) => {
@@ -25,9 +25,9 @@ const Form = () => {
         const convertedAmount = amount / selectedCurrencyRate;
 
         setResult({
-            amount: amount,
-            toCurrency: selectedCurrency,
-            value: convertedAmount,
+            fromAmount: +amount,
+            currency: selectedCurrency,
+            toAmount: convertedAmount,
         });
     };
 
