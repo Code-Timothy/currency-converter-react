@@ -8,11 +8,7 @@ import "./style.css";
 const Form = () => {
     const [amount, setAmount] = useState("");
     const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].short);
-    const [result, setResult] = useState({
-        fromAmount: 0,
-        currency: "",
-        toAmount: 0,
-    });
+    const [result, setResult] = useState();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
