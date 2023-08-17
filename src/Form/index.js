@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { currencies } from "./currencies";
 import Paragraph from "./Paragraph/index";
-import Info from "./Info/index";
 import Select from "./Select/index";
 import Result from "./Result/index";
 import "./style.css";
@@ -68,7 +67,9 @@ const Form = () => {
                     <button className="form__button">Przelicz</button>
                 </p>
 
-                <Info info="*Kursy walut są z dnia 17.08.2023 ze strony NBP.*" />
+                <p className="form__paragraph form__paragraph--info">
+                    *Kursy walut są z dnia 17.08.2023 ze strony NBP.*
+                </p>
             </fieldset>
         </form>
     )

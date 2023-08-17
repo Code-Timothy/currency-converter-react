@@ -37,3 +37,9 @@
     cursor: pointer;
     background-color: hsl(154, 31%, 47%);
 }
+
+.form__paragraph--info {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #666;
+}
