@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { currencies } from "./currencies";
+import Clock from "./Clock/index";
 import Paragraph from "./Paragraph/index";
 import Select from "./Select/index";
 import Result from "./Result/index";
@@ -30,6 +31,8 @@ const Form = () => {
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
+
+                <Clock />
 
                 <Paragraph
                     labelContent="Wybierz walutę :"
