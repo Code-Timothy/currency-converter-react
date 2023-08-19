@@ -3,6 +3,13 @@
     text-align: center;
 }
 
+@media(max-width: 598px) {
+    .form__paragraph {
+        margin: 35px 10px;
+        font-size: 14px;
+    }
+}
+
 .form__label {
     display: inline-block;
     width: 225px;
