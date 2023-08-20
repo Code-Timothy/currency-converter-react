@@ -1,10 +1,10 @@
-import "./style.css";
+import { StyledParagraph, StyledLabel } from "./styled";
 
 const Paragraph = ({ labelContent, body }) => (
-    <p className="form__paragraph">
-        <label className="form__label">{labelContent}</label>
+    <StyledParagraph>
+        <StyledLabel>{labelContent}</StyledLabel>
         {body}
-    </p>
+    </StyledParagraph>
 );
 
 export default Paragraph;
