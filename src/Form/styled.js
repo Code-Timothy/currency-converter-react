@@ -10,8 +10,8 @@ export const StyledForm = styled.form`
 
 export const StyledFieldset = styled.fieldset`
     margin: 0;
-    background-color: white;
-    border: 4px solid #4C9173;
+    background-color: ${({ theme }) => theme.colors.white};
+    border: 4px solid ${({ theme }) => theme.colors.primary};
     border-radius: 10px;
     padding: 25px 25px 0 25px;
 `;
@@ -22,8 +22,8 @@ export const StyledLegend = styled.legend`
     text-align: center;
     text-transform: uppercase;
     border-radius: 20px;
-    background-color: #4C9173;
-    color: white;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 export const StyledInput = styled.input`
@@ -38,15 +38,15 @@ export const StyledParagraph = styled.p`
     ${({ info }) => info && css`
         font-size: 12px;
         margin-bottom: 10px;
-        color: #666;
+        color: ${({ theme }) => theme.colors.doveGray};
     `}
 `;
 
 export const StyledButton = styled.button`
     padding: 10px 25px;
     text-transform: uppercase;
-    color: white;
-    background-color: #4C9173;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.primary};
     border: none;
     border-radius: 5px;
 
