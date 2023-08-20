@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { currencies } from "./currencies";
+import { StyledForm, StyledFieldset, StyledLegend, StyledParagraph, StyledButton, StyledInput } from "./styled";
 import Clock from "./Clock/index";
 import Paragraph from "./Paragraph/index";
 import Select from "./Select/index";
 import Result from "./Result/index";
-import "./style.css";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -28,9 +28,9 @@ const Form = () => {
     };
 
     return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Kalkulator walut</legend>
+        <StyledForm onSubmit={onFormSubmit}>
+            <StyledFieldset>
+                <StyledLegend>Kalkulator walut</StyledLegend>
 
                 <Clock />
 
@@ -47,8 +47,7 @@ const Form = () => {
                 <Paragraph
                     labelContent="Wpisz kwotę w PLN :"
                     body={
-                        <input
-                            className="form__input"
+                        <StyledInput
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             type="number"
@@ -61,15 +60,15 @@ const Form = () => {
 
                 <Result result={result} />
 
-                <p className="form__paragraph">
-                    <button className="form__button">Przelicz</button>
-                </p>
+                <StyledParagraph>
+                    <StyledButton>Przelicz</StyledButton>
+                </StyledParagraph>
 
-                <p className="form__paragraph form__paragraph--info">
+                <StyledParagraph info>
                     *Kursy walut są z dnia 17.08.2023 ze strony NBP.*
-                </p>
-            </fieldset>
-        </form>
+                </StyledParagraph>
+            </StyledFieldset>
+        </StyledForm>
     )
 };
 
