@@ -15,7 +15,7 @@ Demo you can see [Here!](https://code-timothy.github.io/currency-converter-react
 
 * HTML
 * CSS (FLEX, GRID)
-* BEM
+* STYLED-COMPONENTS
 * JAVA SCRIPT ES6+
 * REACT 
 * REACT HOOKS
