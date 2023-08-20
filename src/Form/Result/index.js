@@ -1,11 +1,11 @@
-import "./style.css";
+import { StyledParagraph } from "./styled";
 
 const Result = ({ result }) => (
-    <p className="form__paragraph">
+    <StyledParagraph>
         {!!result && (
             <span> {result.fromAmount} PLN = {result.toAmount.toFixed(2)} {result.currency}</span>
         )}
-    </p>
+    </StyledParagraph>
 );
 
 export default Result;
