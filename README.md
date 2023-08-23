@@ -18,7 +18,7 @@ Demo you can see [Here!](https://code-timothy.github.io/currency-converter-react
 * STYLED-COMPONENTS
 * JAVA SCRIPT ES6+
 * REACT 
-* REACT HOOKS
+* REACT HOOKS AND CUSTOM HOOKS
 
 # Getting Started with Create React App
 
