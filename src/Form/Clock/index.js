@@ -17,9 +17,7 @@ const Clock = () => {
 
     return (
         <StyledClock>
-            <span>
-                Dzisiaj jest {formatDate(date)}
-            </span>
+            Dzisiaj jest {formatDate(date)}
         </StyledClock>
     )
 };
