@@ -30,8 +30,8 @@ const Form = () => {
     };
 
     const calculateResult = () => {
-        const selectedCurrencyRate = currencies.find((currency) => currency.short === selectedCurrency).rate;
-        const convertedAmount = amount / selectedCurrencyRate;
+        const selectedCurrencyRate = ratesData.rates[selectedCurrency];
+        const convertedAmount = amount * selectedCurrencyRate;
 
         setResult({
             fromAmount: +amount,
