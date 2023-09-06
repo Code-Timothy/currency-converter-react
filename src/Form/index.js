@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCurrencyRates } from "./useCurrencyRates";
 import { currencies } from "./currencies";
 import { StyledForm, StyledFieldset, StyledLegend, StyledParagraph, StyledButton, StyledInput } from "./styled";
@@ -11,8 +11,18 @@ const Form = () => {
     const ratesData = useCurrencyRates();
 
     const [amount, setAmount] = useState("");
-    const [selectedCurrency, setSelectedCurrency] = useState();
+    const [selectedCurrency, setSelectedCurrency] = useState("");
     const [result, setResult] = useState();
+
+    useEffect(() => {
+        if (ratesData.status === "success" && ratesData.rates) {
+            const rateKeys = Object.keys(ratesData.rates);
+
+            if (rateKeys.length > 0) {
+                setSelectedCurrency(rateKeys[0]);
+            }
+        }
+    }, [ratesData]);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
