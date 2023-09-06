@@ -8,9 +8,10 @@ export const useCurrencyRates = () => {
     });
 
     useEffect(() => {
+        const baseCurrency = "PLN";
         (async () => {
             try {
-                const response = await fetch("https://api.exchangerate.host/latest");
+                const response = await fetch(`https://api.exchangerate.host/latest?base=${baseCurrency}`);
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
