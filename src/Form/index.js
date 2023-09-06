@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useCurrencyRates } from "./useCurrencyRates";
-import { currencies } from "./currencies";
 import { StyledForm, StyledFieldset, StyledLegend, StyledParagraph, StyledButton, StyledInput } from "./styled";
 import Clock from "./Clock/index";
 import Paragraph from "./Paragraph/index";
