@@ -8,11 +8,11 @@ import Select from "./Select/index";
 import Result from "./Result/index";
 
 const Form = () => {
-    const [amount, setAmount] = useState("");
-    const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].short);
-    const [result, setResult] = useState();
-
     const ratesData = useCurrencyRates();
+
+    const [amount, setAmount] = useState("");
+    const [selectedCurrency, setSelectedCurrency] = useState();
+    const [result, setResult] = useState();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -43,6 +43,7 @@ const Form = () => {
                         <Select
                             selectedCurrency={selectedCurrency}
                             setSelectedCurrency={setSelectedCurrency}
+                            ratesData={ratesData}
                         />
                     }
                 />

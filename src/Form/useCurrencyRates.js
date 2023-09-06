@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const useCurrencyRates = () => {
     const [ratesData, setRatesData] = useState({
-        rates: null,
+        rates: "",
         date: null,
         status: "pending",
     });
