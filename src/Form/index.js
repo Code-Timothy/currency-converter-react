@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCurrencyRates } from "./useCurrencyRates";
-import { StyledForm, StyledFieldset, StyledLegend, StyledParagraph, StyledButton, StyledInput } from "./styled";
+import { StyledForm, StyledFieldset, StyledLegend, StyledParagraph, StyledSpan, StyledButton, StyledInput } from "./styled";
 import Clock from "./Clock/index";
 import Paragraph from "./Paragraph/index";
 import Select from "./Select/index";
@@ -78,7 +78,8 @@ const Form = () => {
                 </StyledParagraph>
 
                 <StyledParagraph info>
-                    *Kursy walut są z dnia 17.08.2023 ze strony NBP.*
+                    Kursy walut pobierane są z Europejskiego Banku Centralnego.<br></br>
+                    Aktualne na dzień: <StyledSpan>{ratesData.date}</StyledSpan>
                 </StyledParagraph>
             </StyledFieldset>
         </StyledForm>
