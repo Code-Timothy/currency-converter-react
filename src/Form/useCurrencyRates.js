@@ -24,6 +24,9 @@ export const useCurrencyRates = () => {
                     });
                 } catch (error) {
                     console.error(error);
+                    setRatesData({
+                        status: "error",
+                    });
                 }
             })();
         }, 1000);

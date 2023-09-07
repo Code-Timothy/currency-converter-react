@@ -109,9 +109,19 @@ const Form = () => {
             )
         default:
             return (
-                <h1>Wystąpił błąd</h1>
+                <StyledForm>
+                    <StyledFieldset>
+                        <StyledLegend>Błąd...</StyledLegend>
+                        <Clock />
+                        <StyledParagraph>
+                            Hmm...<br></br>
+                            Coś poszło nie tak. Sprawdź, czy masz połączenie z internetem.<br></br>
+                            Jeśli masz... to wygląda na to, ze to nasza wina. Spróbuj później... 😢
+                        </StyledParagraph>
+                    </StyledFieldset>
+                </StyledForm>
             )
-    }
+    };
 };
 
 export default Form;
