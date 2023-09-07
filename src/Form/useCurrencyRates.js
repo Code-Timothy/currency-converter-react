@@ -22,8 +22,7 @@ export const useCurrencyRates = () => {
                         date: currencies.date,
                         status: "success",
                     });
-                } catch (error) {
-                    console.error(error);
+                } catch {
                     setRatesData({
                         status: "error",
                     });

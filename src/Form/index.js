@@ -113,7 +113,7 @@ const Form = () => {
                     <StyledFieldset>
                         <StyledLegend>Błąd...</StyledLegend>
                         <Clock />
-                        <StyledParagraph error>
+                        <StyledParagraph error="true">
                             Hmm...<br></br>
                             Coś poszło nie tak. Sprawdź, czy masz połączenie z internetem.<br></br>
                             Jeśli masz... to wygląda na to, ze to nasza wina. Spróbuj później... 😢
