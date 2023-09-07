@@ -42,6 +42,10 @@ export const StyledParagraph = styled.p`
         color: ${({ theme }) => theme.colors.doveGray};
     `}
 
+    ${({ error }) => error && css`
+        color: ${({ theme }) => theme.colors.crimson};
+    `}
+
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px){
         font-size: 12px;
     }

@@ -100,7 +100,7 @@ const Form = () => {
                             <StyledButton>Przelicz</StyledButton>
                         </StyledParagraph>
 
-                        <StyledParagraph info>
+                        <StyledParagraph info="true">
                             Kursy walut pobierane są z Europejskiego Banku Centralnego.<br></br>
                             Aktualne na dzień: <StyledSpan>{ratesData.date}</StyledSpan>
                         </StyledParagraph>
@@ -113,7 +113,7 @@ const Form = () => {
                     <StyledFieldset>
                         <StyledLegend>Błąd...</StyledLegend>
                         <Clock />
-                        <StyledParagraph>
+                        <StyledParagraph error>
                             Hmm...<br></br>
                             Coś poszło nie tak. Sprawdź, czy masz połączenie z internetem.<br></br>
                             Jeśli masz... to wygląda na to, ze to nasza wina. Spróbuj później... 😢
