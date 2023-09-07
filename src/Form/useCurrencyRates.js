@@ -4,27 +4,29 @@ export const useCurrencyRates = () => {
     const [ratesData, setRatesData] = useState({
         rates: "",
         date: null,
-        status: "pending",
+        status: "loading",
     });
 
     useEffect(() => {
         const baseCurrency = "PLN";
-        (async () => {
-            try {
-                const response = await fetch(`https://api.exchangerate.host/latest?base=${baseCurrency}`);
-                if (!response.ok) {
-                    throw new Error(response.statusText);
+        setTimeout(() => {
+            (async () => {
+                try {
+                    const response = await fetch(`https://api.exchangerate.host/latest?base=${baseCurrency}`);
+                    if (!response.ok) {
+                        throw new Error(response.statusText);
+                    }
+                    const currencies = await response.json();
+                    setRatesData({
+                        rates: currencies.rates,
+                        date: currencies.date,
+                        status: "success",
+                    });
+                } catch (error) {
+                    console.error(error);
                 }
-                const currencies = await response.json();
-                setRatesData({
-                    rates: currencies.rates,
-                    date: currencies.date,
-                    status: "success",
-                });
-            } catch (error) {
-                console.error(error);
-            }
-        })();
+            })();
+        }, 1000);
     }, []);
 
     return ratesData;
