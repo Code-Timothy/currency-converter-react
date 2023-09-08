@@ -1,18 +1,15 @@
 import { useState, useEffect } from "react";
 import { useCurrencyRates } from "./useCurrencyRates";
 import {
-    StyledForm,
-    StyledFieldset,
-    StyledLegend,
     StyledParagraph,
     StyledSpan,
     StyledButton,
     StyledInput
 } from "./styled";
-import Clock from "./Clock/index";
 import Paragraph from "./Paragraph/index";
 import Select from "./Select/index";
 import Result from "./Result/index";
+import Tile from "./Tile/index";
 
 const Form = () => {
     const ratesData = useCurrencyRates();
@@ -31,11 +28,6 @@ const Form = () => {
         }
     }, [ratesData]);
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-        calculateResult();
-    };
-
     const calculateResult = () => {
         const selectedCurrencyRate = ratesData.rates[selectedCurrency];
         const convertedAmount = amount * selectedCurrencyRate;
@@ -50,76 +42,76 @@ const Form = () => {
     switch (ratesData.status) {
         case "loading":
             return (
-                <StyledForm>
-                    <StyledFieldset>
-                        <StyledLegend>Ładowanie...</StyledLegend>
-                        <Clock />
+                <Tile
+                    title="ładowanie..."
+                    body={(
                         <StyledParagraph>
                             Sekundka...<br></br>
                             Ładuje kursy walut z Europejskiego Banku Centralnego... 🔨
                         </StyledParagraph>
-                    </StyledFieldset>
-                </StyledForm>
+                    )}
+                />
             )
         case "success":
             return (
-                <StyledForm onSubmit={onFormSubmit}>
-                    <StyledFieldset>
-                        <StyledLegend>Kalkulator walut</StyledLegend>
 
-                        <Clock />
+                <Tile
+                    shouldOnFormSubmit={true}
+                    calculateResult={calculateResult}
+                    title="Kalkulator walut"
+                    body={(
+                        <>
+                            <Paragraph
+                                labelContent="Wybierz walutę :"
+                                body={
+                                    <Select
+                                        selectedCurrency={selectedCurrency}
+                                        setSelectedCurrency={setSelectedCurrency}
+                                        ratesData={ratesData}
+                                    />
+                                }
+                            />
 
-                        <Paragraph
-                            labelContent="Wybierz walutę :"
-                            body={
-                                <Select
-                                    selectedCurrency={selectedCurrency}
-                                    setSelectedCurrency={setSelectedCurrency}
-                                    ratesData={ratesData}
-                                />
-                            }
-                        />
+                            <Paragraph
+                                labelContent="Wpisz kwotę w PLN :"
+                                body={
+                                    <StyledInput
+                                        value={amount}
+                                        onChange={({ target }) => setAmount(target.value)}
+                                        type="number"
+                                        step="0.1"
+                                        min="1"
+                                        required
+                                    />
+                                }
+                            />
 
-                        <Paragraph
-                            labelContent="Wpisz kwotę w PLN :"
-                            body={
-                                <StyledInput
-                                    value={amount}
-                                    onChange={({ target }) => setAmount(target.value)}
-                                    type="number"
-                                    step="0.1"
-                                    min="1"
-                                    required
-                                />
-                            }
-                        />
+                            <Result result={result} />
 
-                        <Result result={result} />
+                            <StyledParagraph>
+                                <StyledButton>Przelicz</StyledButton>
+                            </StyledParagraph>
 
-                        <StyledParagraph>
-                            <StyledButton>Przelicz</StyledButton>
-                        </StyledParagraph>
-
-                        <StyledParagraph info="true">
-                            Kursy walut pobierane są z Europejskiego Banku Centralnego.<br></br>
-                            Aktualne na dzień: <StyledSpan>{ratesData.date}</StyledSpan>
-                        </StyledParagraph>
-                    </StyledFieldset>
-                </StyledForm>
+                            <StyledParagraph info="true">
+                                Kursy walut pobierane są z Europejskiego Banku Centralnego.<br></br>
+                                Aktualne na dzień: <StyledSpan>{ratesData.date}</StyledSpan>
+                            </StyledParagraph>
+                        </>
+                    )}
+                />
             )
         default:
             return (
-                <StyledForm>
-                    <StyledFieldset>
-                        <StyledLegend>Błąd...</StyledLegend>
-                        <Clock />
+                <Tile
+                    title="Błąd..."
+                    body={(
                         <StyledParagraph error="true">
                             Hmm...<br></br>
                             Coś poszło nie tak. Sprawdź, czy masz połączenie z internetem.<br></br>
                             Jeśli masz... to wygląda na to, ze to nasza wina. Spróbuj później... 😢
                         </StyledParagraph>
-                    </StyledFieldset>
-                </StyledForm>
+                    )}
+                />
             )
     };
 };
