@@ -54,7 +54,6 @@ const Form = () => {
             )
         case "success":
             return (
-
                 <Tile
                     shouldOnFormSubmit={true}
                     calculateResult={calculateResult}
