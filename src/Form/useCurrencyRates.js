@@ -7,11 +7,13 @@ export const useCurrencyRates = () => {
         status: "loading",
     });
 
+    const url = "https://api.exchangerate.host/latest?base=PLN";
+
     useEffect(() => {
         setTimeout(() => {
             (async () => {
                 try {
-                    const response = await fetch(`https://api.exchangerate.host/latest?base=PLN`);
+                    const response = await fetch(url);
                     if (!response.ok) {
                         throw new Error(response.statusText);
                     }
