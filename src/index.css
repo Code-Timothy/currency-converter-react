@@ -5,3 +5,11 @@ html {
 *, ::after, ::before {
   box-sizing: inherit;
 }
+
+body {
+  background: rgb(0, 129, 255);
+  background: linear-gradient(300deg, rgba(0, 129, 255, 1) 0%, rgba(250, 190, 192, 1) 90%);
+  font-family: "Biryani", sans-serif;
+  color: white;
+  height: 100vh;
+}
