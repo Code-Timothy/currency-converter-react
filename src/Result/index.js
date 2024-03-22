@@ -1,8 +1,8 @@
 import "./style.css";
 
-const Result = () => (
+const Result = ({ result, amount, selectedCurrency }) => (
     <div className="result">
-        <p className="result__title">200 PLN = 48 USD</p>
+        <p className="result__title">{amount} PLN = {result.toFixed(2)} {selectedCurrency}</p>
     </div>
 );
 
