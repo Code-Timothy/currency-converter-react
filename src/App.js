@@ -3,6 +3,7 @@ import Section from "./Section";
 import Form from "./Form";
 import Button from "./Button";
 import Result from "./Result";
+import Info from "./Info";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           title="Result"
           extraClassName="section--white"
           body={<Result />}
+          extraSectionContent={<Info />}
         />
       </main>
     </Container>
