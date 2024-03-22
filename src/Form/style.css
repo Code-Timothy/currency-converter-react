@@ -1,0 +1,23 @@
+.form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.form__input {
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.form__input::placeholder {
+    color: white;
+}
+
+.form__select {
+    background-color: hsl(360, 100%, 71%);
+    color: white;
+    border: none;
+}
