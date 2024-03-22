@@ -1,8 +1,8 @@
 import "./style.css";
 
-const Button = () => (
+const Button = ({ onFormSubmit }) => (
     <div className="button">
-        <button className="button__button">Przelicz</button>
+        <button className="button__button" onClick={onFormSubmit}>Przelicz</button>
     </div>
 );
 

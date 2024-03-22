@@ -14,11 +14,16 @@ function App() {
 
   const selectedCurrencyRate = currencies.find(currency => currency.short === selectedCurrency).rate;
 
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    calculateResult();
+  };
+
   const calculateResult = () => {
     const newResult = amount / selectedCurrencyRate;
     setResult({
       amount,
-      from: "PLN",
+      fromCurrency: "PLN",
       result: newResult.toFixed(2),
       toCurrency: selectedCurrency
     });
@@ -37,9 +42,10 @@ function App() {
               selectedCurrency={selectedCurrency}
               setSelectedCurrency={setSelectedCurrency}
               calculateResult={calculateResult}
+              onFormSubmit={onFormSubmit}
             />
           }
-          extraSectionContent={<Button />}
+          extraSectionContent={<Button onFormSubmit={onFormSubmit} />}
         />
         <Section
           title="Result"
