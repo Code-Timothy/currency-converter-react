@@ -12,6 +12,12 @@
     transition: 1s;
 }
 
+@media(max-width: 576px) {
+    .button__button {
+        padding: 15px 20px;
+    }
+}
+
 .button__button:hover {
     cursor: pointer;
     transform: scale(1.05);
