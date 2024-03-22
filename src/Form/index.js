@@ -11,6 +11,9 @@ const Form = ({ currencies, amount, setAmount, selectedCurrency, setSelectedCurr
             <input
                 className="form__input"
                 placeholder="Podaj kwotę w PLN"
+                type="number"
+                min={1}
+                step={0.1}
                 value={amount}
                 onChange={({ target }) => setAmount(target.value)}
             />
