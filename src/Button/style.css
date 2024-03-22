@@ -5,7 +5,14 @@
 .button__button {
     width: 150px;
     border: none;
+    border-radius: 10px;
     padding: 20px 30px;
     letter-spacing: 1px;
     color: rgb(255, 57, 58);
+    transition: 1s;
+}
+
+.button__button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }

@@ -18,5 +18,4 @@ body {
   display: grid;
   grid-template-rows: 300px 300px;
   margin-top: 20px;
-  box-shadow: 0px 0px 40px 1px rgba(51, 51, 51, 0.6);
 }
