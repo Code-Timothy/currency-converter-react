@@ -2,6 +2,7 @@ import Container from "./Container";
 import Section from "./Section";
 import Form from "./Form";
 import Button from "./Button";
+import Result from "./Result";
 
 function App() {
   return (
@@ -15,11 +16,7 @@ function App() {
         <Section
           title="Result"
           extraClassName="section--white"
-          body={
-            <>
-              <p>700 <span>PLN</span></p>
-            </>
-          }
+          body={<Result />}
         />
       </main>
     </Container>
