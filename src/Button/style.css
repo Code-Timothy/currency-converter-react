@@ -1,0 +1,12 @@
+.button {
+    justify-self: center;
+}
+
+.button__button {
+    display: block;
+    width: 150px;
+    border: none;
+    padding: 20px 30px;
+    letter-spacing: 1px;
+    color: rgb(255, 57, 58);
+}
