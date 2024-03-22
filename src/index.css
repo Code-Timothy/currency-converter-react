@@ -19,3 +19,9 @@ body {
   grid-template-rows: 300px 300px;
   margin: 50px;
 }
+
+@media(max-width: 576px) {
+  .main {
+    margin: 10px;
+  }
+}
