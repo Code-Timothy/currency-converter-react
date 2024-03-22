@@ -16,7 +16,12 @@ function App() {
 
   const calculateResult = () => {
     const newResult = amount / selectedCurrencyRate;
-    setResult(newResult);
+    setResult({
+      amount,
+      from: "PLN",
+      result: newResult.toFixed(2),
+      toCurrency: selectedCurrency
+    });
   };
 
   return (
@@ -42,8 +47,6 @@ function App() {
           body={
             <Result
               result={result}
-              amount={amount}
-              selectedCurrency={selectedCurrency}
             />
           }
           extraSectionContent={<Info />}
