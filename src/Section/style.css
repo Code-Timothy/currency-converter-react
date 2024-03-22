@@ -1,0 +1,27 @@
+.section {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: rgb(255, 57, 58);
+    background: linear-gradient(200deg, rgba(255, 57, 58, 1) 17%, rgba(250, 190, 192, 1) 100%);
+}
+
+.section__header-title {
+    margin: 0;
+    padding: 20px 20px 0 20px;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.section__body {
+    padding: 20px 30px;
+}
+
+.section--white {
+    background: white;
+    color: rgb(255, 57, 58);
+}
