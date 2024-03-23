@@ -12,7 +12,7 @@ function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [result, setResult] = useState(0);
 
-  const selectedCurrencyRate = currencies.find(currency => currency.short === selectedCurrency).rate;
+  const selectedCurrencyRate = currencies.find(({ short }) => short === selectedCurrency).rate;
 
   const onFormSubmit = (event) => {
     event.preventDefault();
