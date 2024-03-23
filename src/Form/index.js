@@ -6,6 +6,7 @@ const Form = ({ currencies, amount, setAmount, selectedCurrency, setSelectedCurr
             className="form__input"
             placeholder="Podaj kwotę w PLN"
             type="number"
+            required
             min={1}
             step={0.1}
             value={amount}
