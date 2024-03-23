@@ -1,7 +1,7 @@
 import "./style.css";
 
-const Form = ({ currencies, amount, setAmount, selectedCurrency, setSelectedCurrency, onFormSubmit }) => (
-    <form className="form" onSubmit={onFormSubmit}>
+const Form = ({ currencies, amount, setAmount, selectedCurrency, setSelectedCurrency, onSubmit }) => (
+    <form className="form" onSubmit={onSubmit}>
         <input
             className="form__input"
             placeholder="Podaj kwotę w PLN"

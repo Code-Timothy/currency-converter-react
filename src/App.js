@@ -12,7 +12,7 @@ function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [result, setResult] = useState(0);
 
-  const onFormSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
     calculateResult();
   };
@@ -41,10 +41,10 @@ function App() {
               selectedCurrency={selectedCurrency}
               setSelectedCurrency={setSelectedCurrency}
               calculateResult={calculateResult}
-              onFormSubmit={onFormSubmit}
+              onSubmit={onSubmit}
             />
           }
-          extraSectionContent={<Button onFormSubmit={onFormSubmit} />}
+          extraSectionContent={<Button onSubmit={onSubmit} />}
         />
         <Section
           title="Result"
