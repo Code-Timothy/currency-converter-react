@@ -21,10 +21,10 @@ function App() {
     const selectedCurrencyRate = currencies.find(({ short }) => short === selectedCurrency).rate;
 
     setResult({
-      amount,
+      amount: +amount,
       fromCurrency: "PLN",
       result: amount / selectedCurrencyRate,
-      toCurrency: selectedCurrency
+      toCurrency: selectedCurrency,
     });
   };
 
