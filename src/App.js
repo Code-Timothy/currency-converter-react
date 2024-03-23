@@ -12,14 +12,14 @@ function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [result, setResult] = useState(0);
 
-  const selectedCurrencyRate = currencies.find(({ short }) => short === selectedCurrency).rate;
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult();
   };
 
   const calculateResult = () => {
+    const selectedCurrencyRate = currencies.find(({ short }) => short === selectedCurrency).rate;
+
     setResult({
       amount,
       fromCurrency: "PLN",
