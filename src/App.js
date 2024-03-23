@@ -20,11 +20,10 @@ function App() {
   };
 
   const calculateResult = () => {
-    const newResult = amount / selectedCurrencyRate;
     setResult({
       amount,
       fromCurrency: "PLN",
-      result: newResult.toFixed(2),
+      result: amount / selectedCurrencyRate,
       toCurrency: selectedCurrency
     });
   };
