@@ -3,4 +3,5 @@ export const currencies = [
     { short: "EUR", rate: 4.35, },
     { short: "CHF", rate: 4.80, },
     { short: "GBP", rate: 5.05, },
+    { short: "UAH", rate: 0.10, },
 ];
