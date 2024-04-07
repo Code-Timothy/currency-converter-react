@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import "./style.css";
 
 const Clock = () => {
     const [clock, setClock] = useState(new Date());
@@ -30,7 +31,11 @@ const Clock = () => {
     }, [clock]);
 
     return (
-        <div>Dzisiaj jest {formattedDate}</div>
+        <div className="section__clock">
+            <p className="section__clock--text">
+                Dzisiaj jest {formattedDate}
+            </p>
+        </div>
     );
 };
 
