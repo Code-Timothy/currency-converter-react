@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Container from "./Container";
+import Clock from "./Clock";
 import Section from "./Section";
 import Form from "./Form";
 import Button from "./Button";
@@ -32,6 +33,9 @@ function App() {
     <Container>
       <main className="main">
         <Section
+          additionalHeaderContent={
+            <Clock />
+          }
           title="Currency"
           body={
             <Form
