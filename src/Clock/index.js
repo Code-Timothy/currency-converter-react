@@ -17,7 +17,7 @@ const Clock = () => {
 
     useEffect(() => {
         const formatDate = (date) => {
-            return date.toLocaleString("PL", {
+            return date.toLocaleString(undefined, {
                 weekday: "long",
                 month: "long",
                 day: "2-digit",
