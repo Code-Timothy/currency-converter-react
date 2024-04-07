@@ -5,6 +5,12 @@
     font-size: 10px;
 }
 
+@media(max-width: 576px) {
+    .section__clock {
+        text-align: center;
+    }
+}
+
 .section__clock--text {
     margin: 0;
 }
