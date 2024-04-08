@@ -15,7 +15,7 @@ const Clock = () => {
         };
     }, []);
 
-    const formattedDate = formatDate(clock)
+    const formattedDate = formatDate(clock);
 
     return (
         <div className="section__clock">
