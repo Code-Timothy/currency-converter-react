@@ -14,10 +14,11 @@ Demo you can see [Here!](https://code-timothy.github.io/currency-converter-react
 ## Technologies used 📖
 
 * HTML
-* CSS
-* JAVA SCRIPT ES6+
+* CSS (grid, flex, media-queries)
+* JavaScript ES6 + features
 * REACT 
 * REACT HOOKS
+* Create React App
 
 # Getting Started with Create React App
 
