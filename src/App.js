@@ -1,5 +1,6 @@
 import Container from "./Container";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -31,12 +32,7 @@ function App() {
           <button className="form__button">CONVERTE</button>
         </p>
       </form>
-      <div className="information">
-        <p className="information__paragraph">**** **** **** 1234</p>
-        <p className="information__paragraph information__paragraph--smaller">
-          Exchange rates come from the European Central Bank website
-        </p>
-      </div>
+      <Footer disclaimer="Exchange rates come from the European Central Bank website" />
     </Container>
   );
 }
