@@ -1,8 +1,9 @@
+import Container from "./Container";
 import Header from "./Header";
 
 function App() {
   return (
-    <main className="main">
+    <Container>
       <Header title="RateMate Calc" />
       <form className="form">
         <p className="form__paragraph">
@@ -36,7 +37,7 @@ function App() {
           Exchange rates come from the European Central Bank website
         </p>
       </div>
-    </main>
+    </Container>
   );
 }
 

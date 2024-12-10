@@ -1,0 +1,9 @@
+.main {
+    background-color: #0093E9;
+    background: linear-gradient(120deg, #0093E9 0%, #80D0C7 100%);
+    padding: 10px;
+    flex-basis: 1000px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 100px gray;
+}
