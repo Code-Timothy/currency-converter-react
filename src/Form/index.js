@@ -1,14 +1,19 @@
 import { useState } from "react";
+import { currencies } from "../currencies";
 import "./style.css";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
     const [currency, setCurrency] = useState("EUR");
-    const [result, setResult] = useState(0);
+    const [result, setResult] = useState();
 
-    const calculateResult = (amount, selectedCurrencyShort) => {
-        const selectedCurrencyRate = currencies.find(currency => currency.short === selectedCurrencyShort).rate;
-        setResult(amount / selectedCurrencyRate);
+    const calculateResult = (amount, currency) => {
+        const rate = currencies.find(({ short }) => short === currency).rate;
+        setResult({
+            sourceAmount: +amount,
+            targetAmount: amount / rate,
+            currency,
+        });
     };
 
     const onFormSubmit = (event) => {
@@ -58,7 +63,12 @@ const Form = () => {
                 </label>
             </p>
             <p className="form__paragraph">
-                You will get: <span className="form__result">{result === 0 ? "" : result.toFixed(2)}</span>
+                Result: {!!result && (
+                    <span className="form__result">
+                        {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=
+                        {" "}
+                        {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
+                    </span>)}
             </p>
             <p className="form__paragraph">
                 <button className="form__button">CONVERTE</button>
