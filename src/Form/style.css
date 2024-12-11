@@ -1,12 +1,26 @@
 .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0 20px 0 20px;
     color: white;
     letter-spacing: 1px;
 }
 
 .form__paragraph {
+    flex-basis: 110px;
+    display: flex;
+    align-items: center;
     font-size: 26px;
     font-weight: 300;
+    margin: 10px;
+}
+
+@media (max-width: 767px) {
+    .form__paragraph {
+        font-size: 20px;
+        justify-content: center;
+    }
 }
 
 .form__labelText {
@@ -50,8 +64,14 @@
     background-image: linear-gradient(to right, #FF4E50 0%, #F9D423 51%, #FF4E50 100%);
     width: 320px;
     padding: 10px 30px;
-    margin-top: 20px;
     transition: 0.5s;
+}
+
+@media (max-width: 767px) {
+    .form__button {
+        font-size: 16px;
+        width: 300px;
+    }
 }
 
 .form__button:hover {
