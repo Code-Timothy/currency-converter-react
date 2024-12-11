@@ -6,13 +6,6 @@ const Form = () => {
     const [currency, setCurrency] = useState("EUR");
     const [result, setResult] = useState(0);
 
-    const currencies = [
-        { name: "Dolar Amerykański", short: "USD", rate: 4.07 },
-        { name: "Euro", short: "EUR", rate: 4.29 },
-        { name: "Funt Brytyjski", short: "GBP", rate: 5.17 },
-        { name: "Frank Szwajcarski", short: "CHF", rate: 4.58 },
-    ];
-
     const calculateResult = (amount, selectedCurrencyShort) => {
         const selectedCurrencyRate = currencies.find(currency => currency.short === selectedCurrencyShort).rate;
         setResult(amount / selectedCurrencyRate);
