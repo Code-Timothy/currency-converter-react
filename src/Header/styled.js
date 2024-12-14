@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Title = styled.h1`

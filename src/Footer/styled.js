@@ -4,7 +4,7 @@ export const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Paragraph = styled.p`
