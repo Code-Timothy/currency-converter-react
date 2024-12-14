@@ -17,7 +17,8 @@ Demo you can see [Here!](https://code-timothy.github.io/currency-converter-react
 * CSS (grid, flex, media-queries)
 * JavaScript ES6 + features
 * REACT 
-* REACT HOOKS
+* REACT HOOKS (useState, useEffect and custom hooks)
+* Styled-components
 * Create React App
 
 ## Available Scripts
