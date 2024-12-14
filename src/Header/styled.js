@@ -1,24 +1,30 @@
-.header {
+import styled from "styled-components";
+import logo from "../images/logo.png";
+
+export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
     color: white;
-}
+`;
 
-.header__header {
+export const Title = styled.h1`
     margin: 0;
     font-size: 36px;
-}
+`;
 
-.header__logoContainer {
+export const LogoContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+`;
 
-.header__logo {
+export const Logo = styled.img.attrs({
+    src: logo,
+    alt: "logo",
+})`
     padding: 5px;
     width: 100px;
-}
+`;
