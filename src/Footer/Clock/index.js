@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useCurrentDate } from "./useCurrentDate";
 
 const formatDate = (date) => date.toLocaleString("en-EN", {
     weekday: "long",
@@ -10,17 +10,7 @@ const formatDate = (date) => date.toLocaleString("en-EN", {
 });
 
 const Clock = () => {
-    const [date, setDate] = useState(new Date());
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
+    const date = useCurrentDate();
 
     return (
         <span>Today is {formatDate(date)}</span>
