@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { currencies } from "../currencies";
 import Result from "./Result";
-import "./style.css";
+import { StyledForm, Paragraph, Text, Input, Option, Button } from "./styled";
 
 const Form = ({ result, calculateResult }) => {
     const [amount, setAmount] = useState("");
@@ -14,15 +14,13 @@ const Form = ({ result, calculateResult }) => {
 
     return (
         <>
-            <form
-                className="form"
+            <StyledForm
                 onSubmit={onFormSubmit}
             >
-                <p className="form__paragraph">
+                <Paragraph>
                     <label>
-                        <span className="form__labelText">Enter the amount</span>
-                        <input
-                            className="form__input"
+                        <Text>Enter the amount</Text>
+                        <Input
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             type="number"
@@ -32,33 +30,32 @@ const Form = ({ result, calculateResult }) => {
                             required
                         />
                     </label>
-                </p>
-                <p className="form__paragraph">
+                </Paragraph>
+                <Paragraph>
                     <label>
-                        <span className="form__labelText">Select currency</span>
-                        <select
-                            className="form__input"
+                        <Text>Select currency</Text>
+                        <Input
+                            as="select"
                             value={currency}
                             onChange={({ target }) => setCurrency(target.value)}
                             name="currency"
                         >
                             {currencies.map((currency) =>
-                                <option
-                                    className="form__option"
+                                <Option
                                     key={currency.short}
                                     value={currency.short}
                                 >
                                     {currency.name}
-                                </option>
+                                </Option>
                             )}
-                        </select>
+                        </Input>
                     </label>
-                </p>
-                <p className="form__paragraph">
-                    <button className="form__button">CONVERTE</button>
-                </p>
+                </Paragraph>
+                <Paragraph>
+                    <Button>CONVERTE</Button>
+                </Paragraph>
                 <Result result={result} />
-            </form>
+            </StyledForm>
         </>
     );
 };

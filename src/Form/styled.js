@@ -1,13 +1,15 @@
-.form {
+import styled from "styled-components";
+
+export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 20px 0 20px;
     color: white;
     letter-spacing: 1px;
-}
+`;
 
-.form__paragraph {
+export const Paragraph = styled.p`
     flex-basis: 110px;
     display: flex;
     align-items: center;
@@ -15,41 +17,39 @@
     font-size: 26px;
     font-weight: 300;
     margin: 10px;
-}
 
-@media (max-width: 767px) {
-    .form__paragraph {
+    @media (max-width: 767px){
         font-size: 20px;
     }
-}
+`;
 
-.form__labelText {
+export const Text = styled.span`
     margin: 40px 0 40px 0;
     display: inline-block;
     width: 250px;
     font-size: 26px;
     font-weight: 300;
-}
+`;
 
-.form__input {
+export const Input = styled.input`
     border: 2px solid lightblue;
     background-color: transparent;
     color: white;
     width: 300px;
-}
 
-.form__input::placeholder {
-    padding: 10px 10px 10px 3px;
-    color: white;
-    font-size: 20px;
-    opacity: 70%;
-}
+    &::placeholder{
+        padding: 10px 10px 10px 3px;
+        color: white;
+        font-size: 20px;
+        opacity: 70%;
+    }
+`;
 
-.form__option {
+export const Option = styled.option`
     background-color: gray;
-}
+`;
 
-.form__button {
+export const Button = styled.button`
     font-size: 20px;
     border: none;
     border-radius: 10px;
@@ -61,16 +61,14 @@
     width: 320px;
     padding: 10px 30px;
     transition: 0.5s;
-}
 
-@media (max-width: 767px) {
-    .form__button {
+    @media (max-width: 767px){
         font-size: 16px;
         width: 300px;
-    }
-}
 
-.form__button:hover {
-    background-position: right center;
-    cursor: pointer;
-}
+        &:hover{
+            background-position: right center;
+            cursor: pointer;
+        }
+    }
+`;
