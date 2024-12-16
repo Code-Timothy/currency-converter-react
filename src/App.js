@@ -55,7 +55,7 @@ function App() {
     <StyledContainer>
       <Header title="RateMate Calc" />
       <Form result={result} ratesData={ratesData} calculateResult={calculateResult} />
-      <Footer disclaimer="Exchange rates come from the European Central Bank website" />
+      <Footer disclaimer="Exchange rates come from the various financial institutions" />
     </StyledContainer>
   );
 }
