@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Result from "./Result";
+import Loading from "./Loading";
 import { StyledForm, Paragraph, Text, Input, Option, Button } from "./styled";
 
 const Form = ({ result, ratesData, calculateResult }) => {
@@ -13,7 +14,7 @@ const Form = ({ result, ratesData, calculateResult }) => {
 
     return (
         <>
-            {ratesData.status === "loading" && <div>loading</div>}
+            {ratesData.status === "loading" && <Loading />}
             {ratesData.status === "error" && <div>error</div>}
             {ratesData.status === "success" &&
                 <StyledForm
