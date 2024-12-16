@@ -1,7 +1,7 @@
 import { Wrapper } from "./styled";
 
-const StatusMessage = ({ message }) => (
-    <Wrapper>
+const StatusMessage = ({ message, color }) => (
+    <Wrapper color={color}>
         <span>{message}</span>
     </Wrapper>
 );

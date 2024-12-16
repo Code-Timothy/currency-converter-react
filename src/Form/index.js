@@ -16,9 +16,11 @@ const Form = ({ result, ratesData, calculateResult }) => {
         <>
             {ratesData.status === "loading" && <StatusMessage
                 message={<>One second...<br />Loading exchange rates from various financial institutions...😎</>}
+                color="white"
             />}
             {ratesData.status === "error" && <StatusMessage
                 message="Hmm... Something went wrong🤯 Check if you have an internet connection. If you do... it seems like it's our fault. Maybe you could try again later? 🤔"
+                color="crimson"
             />}
             {ratesData.status === "success" &&
                 <StyledForm
