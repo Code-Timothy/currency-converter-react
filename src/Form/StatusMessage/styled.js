@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledLoading = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     padding: 50px;
     align-items: center;

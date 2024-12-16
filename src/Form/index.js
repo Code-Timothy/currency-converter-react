@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Result from "./Result";
-import Loading from "./Loading";
+import StatusMessage from "./StatusMessage";
 import { StyledForm, Paragraph, Text, Input, Option, Button } from "./styled";
 
 const Form = ({ result, ratesData, calculateResult }) => {
@@ -14,8 +14,12 @@ const Form = ({ result, ratesData, calculateResult }) => {
 
     return (
         <>
-            {ratesData.status === "loading" && <Loading />}
-            {ratesData.status === "error" && <div>error</div>}
+            {ratesData.status === "loading" && <StatusMessage
+                message={<>One second...<br />Loading exchange rates from various financial institutions...😎</>}
+            />}
+            {ratesData.status === "error" && <StatusMessage
+                message="Hmm... Something went wrong🤯 Check if you have an internet connection. If you do... it seems like it's our fault. Maybe you could try again later? 🤔"
+            />}
             {ratesData.status === "success" &&
                 <StyledForm
                     onSubmit={onFormSubmit}

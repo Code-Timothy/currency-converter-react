@@ -17,7 +17,7 @@ function App() {
       const fetchData = async () => {
         try {
           const response = await fetch(
-            "https://gist.githubusercontent.com/Code-Timothy/5b66b0529ce7b2de9374a373b27bba7e/raw/1a68a39879785d0004003f0286d358aceb872b0e/currencies.json"
+            "httpss://gist.githubusercontent.com/Code-Timothy/5b66b0529ce7b2de9374a373b27bba7e/raw/1a68a39879785d0004003f0286d358aceb872b0e/currencies.json"
           );
 
           if (!response.ok) {
