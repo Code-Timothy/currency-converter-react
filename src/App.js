@@ -52,8 +52,8 @@ function App() {
         day: "numeric",
         month: "numeric",
       })
-    )
-  }
+    );
+  };
 
   const calculateResult = (amount, selectedCurrency) => {
     const rate = ratesData.rates[selectedCurrency].value;
