@@ -62,13 +62,13 @@ export const Button = styled.button`
     padding: 10px 30px;
     transition: 0.5s;
 
+    &:hover{
+        background-position: right center;
+        cursor: pointer;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px){
         font-size: 16px;
         width: 300px;
-
-        &:hover{
-            background-position: right center;
-            cursor: pointer;
-        }
     }
 `;
