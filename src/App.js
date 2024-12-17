@@ -32,6 +32,7 @@ function App() {
             status: "success",
           });
         } catch (error) {
+          console.error(error);
           setRatesData({
             status: "error",
           });
@@ -41,6 +42,18 @@ function App() {
       fetchData();
     }, 2000);
   }, []);
+
+  const formatDate = (date) => {
+    const currentDate = new Date(date);
+
+    return (
+      currentDate.toLocaleDateString("en-EN", {
+        year: "numeric",
+        day: "numeric",
+        month: "numeric",
+      })
+    )
+  }
 
   const calculateResult = (amount, selectedCurrency) => {
     const rate = ratesData.rates[selectedCurrency].value;
@@ -54,8 +67,15 @@ function App() {
   return (
     <StyledContainer>
       <Header title="RateMate Calc" />
-      <Form result={result} ratesData={ratesData} calculateResult={calculateResult} />
-      <Footer disclaimer="Exchange rates come from the various financial institutions" />
+      <Form
+        result={result}
+        ratesData={ratesData}
+        calculateResult={calculateResult}
+      />
+      <Footer
+        disclaimer="Exchange rates come from the various financial institutions"
+        date={ratesData.status === "success" ? formatDate(ratesData.date) : ""}
+      />
     </StyledContainer>
   );
 }

@@ -1,10 +1,14 @@
 import Clock from "./Clock";
 import { Paragraph, StyledFooter } from "./styled";
 
-const Footer = ({ disclaimer }) => (
+const Footer = ({ disclaimer, date }) => (
     <StyledFooter>
         <Paragraph><Clock /></Paragraph>
-        <Paragraph>{disclaimer}</Paragraph>
+        <Paragraph>
+            {disclaimer}
+            <br />
+            <strong>Current as of: {date}</strong>
+        </Paragraph>
     </StyledFooter>
 );
 
