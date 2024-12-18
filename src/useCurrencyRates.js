@@ -12,7 +12,7 @@ export const useCurrencyRates = () => {
       const fetchData = async () => {
         try {
           const response = await fetch(
-            "https://gist.githubusercontent.com/Code-Timothy/5b66b0529ce7b2de9374a373b27bba7e/raw/1a68a39879785d0004003f0286d358aceb872b0e/currencies.json"
+            "https://api.currencyapi.com/v3/latest?apikey=cur_live_7FWEWB87poh1GHErPdhcgsQJMLwcfR1paW3kL5TY&currencies=&base_currency=PLN"
           );
 
           if (!response.ok) {
