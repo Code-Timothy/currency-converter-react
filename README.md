@@ -1,7 +1,7 @@
 # Currency Converter in React.js 💰
 ## Description 📑
 
-This is a simple currency converter, created with react technology. In this app you can choose one currency from several and add the amount you want to convert from PLN to the selected currency.
+This is a simple currency converter. Created with react technology. In this app you can choose one currency from sevral and add the amount you want convert from PLN to the selected currency. Every currency rates are downloaded from API.
 
 ## Preview 👓
 
