@@ -52,7 +52,10 @@ const Form = ({ result, ratesData, calculateResult }) => {
                                 name="currency"
                             >
                                 {Object.keys(ratesData.rates).map(currency => (
-                                    <Option key={currency}>
+                                    <Option
+                                        key={currency}
+                                        value={currency}
+                                    >
                                         {currency}
                                     </Option>
                                 ))}
