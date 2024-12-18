@@ -5,7 +5,7 @@ This is a simple currency converter. Created with react technology. In this app 
 
 ## Preview 👓
 
-![GIF how to use this app](/howtouse3.gif)
+![GIF how to use this app](/howtouse5.gif)
 
 ## Demo 🔨
 
