@@ -26,8 +26,7 @@ export const useCurrencyRates = () => {
             date: data.meta.last_updated_at,
             status: "success",
           });
-        } catch (error) {
-          console.error(error);
+        } catch {
           setRatesData({
             status: "error",
           });
