@@ -1,8 +1,6 @@
-export const fetchCurrencyData = async () => {
+export const fetchData = async (apiUrl) => {
     try {
-        const response = await fetch(
-            "https://api.currencyapi.com/v3/latest?apikey=cur_live_7FWEWB87poh1GHErPdhcgsQJMLwcfR1paW3kL5TY&currencies=&base_currency=PLN"
-        );
+        const response = await fetch(apiUrl);
 
         if (!response.ok) {
             throw new Error(response.statusText);
